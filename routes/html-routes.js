@@ -1,10 +1,9 @@
+var express = require("express");
 var path = require("path");
 
-module.exports = function(app) {
+var app = express();
 
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/html/index.html"));
-  });
+module.exports = function(app) {
 
   app.get("/order", function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/html/order.html"));
@@ -12,5 +11,10 @@ module.exports = function(app) {
 
   app.get("/receipt", function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/html/receipt.html"));
+  }); 
+
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "/../public/html/index.html"));
   });
+
 }
