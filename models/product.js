@@ -4,10 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     product_name: DataTypes.STRING,
     department_name: DataTypes.STRING,
     price: DataTypes.FLOAT,
-    stock_quantity: DataTypes.INTEGER
-  }, {});
-  Product.associate = function(models) {
-    // associations can be defined here
-  };
+    stock_quantity: DataTypes.INTEGER,
+    createdAt:DataTypes.DATEONLY,
+    updatedAt:DataTypes.DATEONLY
+  });
   return Product;
 };
