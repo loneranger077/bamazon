@@ -5,6 +5,10 @@ var app = express();
 
 module.exports = function(app) {
 
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "/../public/html/index.html"));
+  });
+
   app.get("/order", function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/html/order.html"));
   });
@@ -12,9 +16,5 @@ module.exports = function(app) {
   app.get("/receipt", function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/html/receipt.html"));
   }); 
-
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/html/index.html"));
-  });
 
 }
